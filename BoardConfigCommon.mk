@@ -143,7 +143,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(VENDOR_PATH)
 
 # RIL
 TARGET_RIL_VARIANT := caf
-PROTOBUF_SUPPORTED := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -157,13 +156,11 @@ BOARD_USES_QC_TIME_SERVICES := true
 # QC PROPRIETARY
 ifneq ($(QCPATH),)
 BOARD_USES_QCNE := true
+TARGET_LDPRELOAD := libNimsWrap.so
 endif
 
 # Video
 TARGET_HAVE_SIGNED_VENUS_FW := true
-
-# Vold
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true

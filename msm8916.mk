@@ -67,20 +67,9 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
 ifeq ($(BOARD_USES_QCNE),true)
-PRODUCT_PACKAGES += \
-    services-ext \
-    init.cne.rc
-
 PRODUCT_PROPERTY_OVERRIDES +=
     persist.cne.feature=4
 endif
-
-# CRDA
-PRODUCT_PACKAGES += \
-    crda \
-    linville.key.pub.pem \
-    regdbdump \
-    regulatory.bin
 
 # Display
 PRODUCT_PACKAGES += \
@@ -89,11 +78,6 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8916 \
     libtinyxml \
     memtrack.msm8916
-
-# Filesystem
-PRODUCT_PACKAGES += \
-    e2fsck \
-    make_ext4fs
 
 # FM
 PRODUCT_PACKAGES += \
@@ -140,9 +124,7 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    init.crda.sh \
-    init.qcom.bt.sh \
-    init.qcom.coex.sh
+    init.qcom.bt.sh
 
 PRODUCT_PACKAGES += \
     init.qcom.rc \
@@ -157,11 +139,8 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
+    librmnetctl \
     libxml2
-
-# USB
-PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
 
 # Wifi
 PRODUCT_PACKAGES += \
